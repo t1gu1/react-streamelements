@@ -1,17 +1,19 @@
 # React for streamElements
 
-## Todo
+- I just start the project late at night so it's not ready (Check TODO)
+- You can ask for some feature in the issue section with the enhancement label.
+- If you want contribute to the project, go for it!
 
-### Html
+## How to import to streamElements
 
-- Copy and past index.html in the html of streamelements script.
-- Just Remove these 2 lines before:
+- Copy `build/static/index.html` for the HTML section
+- Copy `build/static/js/bundle.min.js` for the javascript section
+- Copy `build/static/css/bundle.min.css` for the css section
+- Media: Not working right now. (I'll try to inline them in base64)
 
-```javascript
-<script src="/static/js/2.bfca8780.chunk.js"></script>
-<script src="/static/js/main.3b708a56.chunk.js"></script>
-```
+## TODO
 
-### Javascript
-
-Take `build/static/js/2.bfca8780.chunk.js` and `build/static/js/main.3b708a56.chunk.js` and paste it in javascript
+- Inline images as base64
+- Simulate data
+- Simulate onWidgetLoad
+- Simulate onEventReceived (API)
