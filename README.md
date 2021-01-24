@@ -6,14 +6,13 @@
 
 ## How to import to streamElements
 
-- Copy `build/static/index.html` for the HTML section
-- Copy `build/static/js/bundle.min.js` for the javascript section
-- Copy `build/static/css/bundle.min.css` for the css section
-- Media: Not working right now. (I'll try to inline them in base64)
+- HTML: Copy `build/static/index.html` for the HTML section
+- JS: Copy only `build/static/js/bundle.min.js` for the javascript section
+- CSS: Copy `build/static/css/bundle.min.css` for the css section
+- Image: Don't worry buddy, images are inline into base64. (Nothing to do)
 
 ## TODO
 
-- Inline images as base64
 - Simulate data
 - Simulate onWidgetLoad
 - Simulate onEventReceived (API)
