@@ -1,6 +1,8 @@
 # React for streamElements
 
-- I just start the project late at night so it's not ready (Check TODO)
+- Hi, I want to be a leader to help people with streaming and nice UI integrations.
+- **Follow me on twitch**: <https://www.twitch.tv/t1gu1sensei> (Im a **French QC** Canadian, but I understand english well if you have some questions)
+
 - You can ask for some feature in the issue section with the enhancement label.
 - If you want contribute to the project, go for it!
 
