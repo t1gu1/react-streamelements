@@ -4,10 +4,25 @@ import "./App.css";
 
 import logo from "./logo.svg";
 // import io from "socket.io-client";
+import tmi from "tmi.js";
 
 function App() {
   const [isLogoVisible, setIsLogoVisible] = useState(true);
   const [latestFollower, setLatestFollower] = useState();
+
+  const client = new tmi.Client({
+    connection: { reconnect: true },
+    channels: [process.env.REACT_APP_CHANNEL_NAME],
+  });
+
+  client.connect();
+
+  client.on("message", (channel, tags, message, self) => {
+    // "Alca: Hello, World!"
+    console.log("channel", channel);
+    console.log("tags", tags);
+    console.log(`${tags["display-name"]}: ${message}`);
+  });
 
   const JWT = process.env.REACT_APP_STREAMELEMENTS_TOKEN;
 
@@ -36,12 +51,10 @@ function App() {
   };
 
   const onEventUpdateTest = (data) => {
-    console.log("onEventUpdateTest:", data);
-
+    // console.log("onEventUpdateTest:", data); // uncomment to see all info
     const followerName = data.event.name;
     if (data.listener !== "follower-latest" || latestFollower === followerName)
       return;
-
     setLatestFollower(data.event.name);
     console.log("A new FOLLOWER!!!", followerName);
   };
@@ -70,12 +83,12 @@ function App() {
     });
 
     socket.on("event:update", (data) => {
-      console.log(data);
+      console.log("event:update", data);
       // Structure as on https://github.com/StreamElements/widgets/blob/master/CustomCode.md#on-session-update
     });
 
     socket.on("event:reset", (data) => {
-      console.log(data);
+      console.log("event:reset", data);
       // Structure as on https://github.com/StreamElements/widgets/blob/master/CustomCode.md#on-session-update
     });
   }, []);

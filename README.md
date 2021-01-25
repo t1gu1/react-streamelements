@@ -28,6 +28,7 @@ So you just have to create your .env file and put your token on `REACT_APP_STREA
 ### env
 
 Create the `.env` file at the root of the project and add your token to the `REACT_APP_STREAMELEMENTS_TOKEN` env variable.
+At the root of the project and add channel name to the `REACT_APP_CHANNEL_NAME` env variable to use BOT that will send you chat message.
 
 - You can get you token from: https://streamelements.com/dashboard/account/channels
 - Show secrets
@@ -38,15 +39,22 @@ Example:
 
 ```.env
 REACT_APP_STREAMELEMENTS_TOKEN=my_stream_element_token
+REACT_APP_CHANNEL_NAME=channelName
 ```
 
 ## Nice packages integrated
 
+### Animate.css
+
 - Make simple and nice animation with: [react-animated-css](https://github.com/digital-flowers/react-animated-css#readme)
 
-## StreamElements API Documentation (Events)
+### StreamElements API Documentation (Events)
 
 https://github.com/StreamElements/widgets/blob/master/CustomCode.md
+
+### Twitch chat events (tmi.js)
+
+https://github.com/tmijs/tmi.js
 
 ## TODO
 
