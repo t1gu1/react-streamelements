@@ -3,14 +3,17 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import ChatProvider from "./providers/ChatProvider";
+import AlertsProvider from "./providers/AlertsProvider";
 import reportWebVitals from "./reportWebVitals";
 import "animate.css/animate.compat.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChatProvider>
-      <App />
-    </ChatProvider>
+    <AlertsProvider>
+      <ChatProvider>
+        <App />
+      </ChatProvider>
+    </AlertsProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

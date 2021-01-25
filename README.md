@@ -1,3 +1,5 @@
+[![SVG Banners](https://svg-banners.vercel.app/api?type=origin&text1=Twitch&nbsp;|&nbsp;T1gu1Sensei&text2=💖%20Open%20Source&width=800&height=400)](https://www.twitch.tv/t1gu1sensei)
+
 # React for streamElements
 
 - Hi, I want to be a leader to help people with streaming and nice UI integrations.
@@ -52,11 +54,12 @@ REACT_APP_CHANNEL_NAME=channelName
 
 https://github.com/StreamElements/widgets/blob/master/CustomCode.md
 
+Currently I add everything of that in providers/AlertsProviders.js
+
+TODO: Add other events like **Host**, **Raid**, **Merch**
+
 ### Twitch chat events (tmi.js)
 
 https://github.com/tmijs/tmi.js
 
-## TODO
-
-- Simulate onWidgetLoad/data
-- Clean and restructure code (Socket/events)
+Currently I add everything of that in providers/ChatProvider.js
