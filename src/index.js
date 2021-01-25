@@ -2,12 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import ChatProvider from "./providers/ChatProvider";
 import reportWebVitals from "./reportWebVitals";
 import "animate.css/animate.compat.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ChatProvider>
+      <App />
+    </ChatProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -1,28 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Animated } from "react-animated-css";
 import "./App.css";
+import { ChatContext } from "./providers/ChatProvider";
 
 import logo from "./logo.svg";
 // import io from "socket.io-client";
-import tmi from "tmi.js";
 
 function App() {
+  const { chat } = useContext(ChatContext);
   const [isLogoVisible, setIsLogoVisible] = useState(true);
   const [latestFollower, setLatestFollower] = useState();
-
-  const client = new tmi.Client({
-    connection: { reconnect: true },
-    channels: [process.env.REACT_APP_CHANNEL_NAME],
-  });
-
-  client.connect();
-
-  client.on("message", (channel, tags, message, self) => {
-    // "Alca: Hello, World!"
-    console.log("channel", channel);
-    console.log("tags", tags);
-    console.log(`${tags["display-name"]}: ${message}`);
-  });
 
   const JWT = process.env.REACT_APP_STREAMELEMENTS_TOKEN;
 
@@ -92,6 +79,11 @@ function App() {
       // Structure as on https://github.com/StreamElements/widgets/blob/master/CustomCode.md#on-session-update
     });
   }, []);
+
+  // This is how to watch chat messages
+  useEffect(() => {
+    console.log(chat);
+  }, [chat]);
 
   return (
     <div className="App">
